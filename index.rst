@@ -1,44 +1,62 @@
-.. _Fibre_Script:
-
-===============
-Overview
+Getting Started
 ===============
 
-.. currentmodule:: picamera
+This document will show you how to get up and running with Read the Docs.
+You will have your docs imported on Read the Docs in 5 minutes,
+displayed beautifully for the world.
 
-This chapter provides an overview of how the camera works under various
-conditions, as well as an introduction to the software interface that picamera
-uses.
+If you are already using Sphinx or Markdown for your docs, skip ahead to
+:ref:`import-docs`.
 
-.. _operations:
+Write Your Docs
+---------------
 
-Theory of Operation
-===================
+You have two options for formatting your documentation:
 
-Many questions I receive regarding picamera are based on misunderstandings of
-how the camera works. This chapter attempts to correct those misunderstandings
-and gives the reader a basic description of the operation of the camera. The
-chapter deliberately follows a `lie-to-children`_ model, presenting first a
-technically inaccurate but useful model of the camera's operation, then
-refining it closer to the truth later on.
+* :ref:`in-rst`
+* :ref:`in-markdown`
 
-Misconception #1
-----------------
+.. _in-rst:
 
-The Pi's camera module is basically a mobile phone camera module. Mobile phone
-digital cameras differ from larger, more expensive, cameras (`DSLRs`_) in a
-few respects. The most important of these, for understanding the Pi's camera,
-is that many mobile cameras (including the Pi's camera module) use a `rolling
-shutter`_ to capture images. When the camera needs to capture an image, it
-reads out pixels from the sensor a row at a time rather than capturing all
-pixel values at once.
+In reStructuredText
+~~~~~~~~~~~~~~~~~~~
 
-In fact, the "global shutter" on DSLRs typically also reads out pixels a row at
-a time. The major difference is that a DSLR will have a physical shutter that
-covers the sensor.  Hence in a DSLR the procedure for capturing an image is to
-open the shutter, letting the sensor "view" the scene, close the shutter, then
-read out each line from the sensor.
+There is `a screencast`_ that will help you get started if you prefer.
 
-The notion of "capturing an image" is thus a bit misleading as what we actually
-mean is "reading each row from the sensor in turn and assembling them back into
-an image".
+Sphinx_ is a tool that makes it easy to create beautiful documentation.
+Assuming you have Python_ already, `install Sphinx`_::
+
+    $ pip install sphinx sphinx-autobuild
+
+Create a directory inside your project to hold your docs::
+
+    $ cd /path/to/project
+    $ mkdir docs
+
+Run ``sphinx-quickstart`` in there::
+
+    $ cd docs
+    $ sphinx-quickstart
+
+This quick start will walk you through creating the basic configuration; in most cases, you
+can just accept the defaults. When it's done, you'll have an ``index.rst``, a
+``conf.py`` and some other files. Add these to revision control.
+
+Now, edit your ``index.rst`` and add some information about your project.
+Include as much detail as you like (refer to the reStructuredText_ syntax
+or `this template`_ if you need help). Build them to see how they look::
+
+    $ make html
+
+.. note:: You can use ``sphinx-autobuild`` to auto-reload your docs. Run ``sphinx-autobuild . _build_html`` instead.
+
+Edit your files and rebuild until you like what you see, then commit your changes and push to your public repository.
+Once you have Sphinx documentation in a public repository, you can start using Read the Docs.
+
+.. _in-markdown:
+
+In Markdown
+~~~~~~~~~~~
+
+You can use Markdown and reStructuredText in the same Sphinx project.
+We support this natively on Read the Docs, and you can do it locally::
