@@ -1,7 +1,7 @@
-.. _camera_hardware:
+.. _Fibre_Script:
 
 ===============
-Camera Hardware
+Overview
 ===============
 
 .. currentmodule:: picamera
