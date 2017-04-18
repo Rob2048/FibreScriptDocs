@@ -1,47 +1,41 @@
-======================
-Fibre Script Reference
-======================
-
-This document will show you how to get up and running with Read the Docs.
-You will have your docs imported on Read the Docs in 5 minutes,
-displayed beautifully for the world.
-
-Game API
+$project
 ========
 
-You have two options for formatting your documentation:
+$project will solve your problem of where to start with documentation,
+by providing a basic explanation of how to do it easily.
 
-* RST
-* Markdown
+Look how easy it is to use:
 
-.. _in-rst:
+    import project
+    # Get your stuff done
+    project.do_stuff()
 
-In reStructuredText
--------------------
+Features
+--------
 
-There is that will help you get started if you prefer.
+- Be awesome
+- Make things faster
 
-Is a tool that makes it easy to create beautiful documentation.
-Assuming you have Python_ already::
+Installation
+------------
 
-    $ pip install sphinx sphinx-autobuild
+Install $project by running:
 
-Maybe some c code?::
+    install project
 
-    function main()
-    {
-    	test();
-    }
+Contribute
+----------
 
-.. note:: Some note.
+- Issue Tracker: github.com/$project/$project/issues
+- Source Code: github.com/$project/$project
 
-Edit your files and rebuild until you like what you see, then commit your changes and push to your public repository.
-Once you have Sphinx documentation in a public repository, you can start using Read the Docs.
+Support
+-------
 
-.. _in-markdown:
+If you are having issues, please let us know.
+We have a mailing list located at: project@google-groups.com
 
-In Markdown
------------
+License
+-------
 
-You can use Markdown and reStructuredText in the same Sphinx project.
-We support this natively on Read the Docs, and you can do it locally
+The project is licensed under the BSD license.
