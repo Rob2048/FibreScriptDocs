@@ -1,3 +1,4 @@
+======================
 Fibre Script Reference
 ======================
 
@@ -6,7 +7,7 @@ You will have your docs imported on Read the Docs in 5 minutes,
 displayed beautifully for the world.
 
 Game API
---------
+========
 
 You have two options for formatting your documentation:
 
@@ -16,7 +17,7 @@ You have two options for formatting your documentation:
 .. _in-rst:
 
 In reStructuredText
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 There is that will help you get started if you prefer.
 
@@ -40,7 +41,7 @@ Once you have Sphinx documentation in a public repository, you can start using R
 .. _in-markdown:
 
 In Markdown
-~~~~~~~~~~~
+-----------
 
 You can use Markdown and reStructuredText in the same Sphinx project.
 We support this natively on Read the Docs, and you can do it locally
