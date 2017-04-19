@@ -4,14 +4,7 @@ Table of Contents
 =================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :numbered:
 
-   overview
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   api
