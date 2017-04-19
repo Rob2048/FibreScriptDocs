@@ -16,14 +16,27 @@ Common Parameters
 Game
 ----
 
-game_set_win_money
-~~~~~~~~~~~~~~~~~~
+game_spawn_contract
+~~~~~~~~~~~~~~~~~~~
+
+game_spawn_contract()
+
+game_spawn_resume
+~~~~~~~~~~~~~~~~~
+
+game_spawn_resume()
+
+Player
+------
+
+player_set_win_money
+~~~~~~~~~~~~~~~~~~~~
 
 Set the amount of money a player needs to win the level.
 
 .. code-block:: js
 
-	game_set_win_money(playerId, amount)
+	player_set_win_money(playerId, amount)
 
 +------------------------+------------+--------------------+
 | Param                  | Type       | Description        |
@@ -33,14 +46,14 @@ Set the amount of money a player needs to win the level.
 | amount                 | Number     | Amount of money.   |
 +------------------------+------------+--------------------+
 
-game_set_fail_seconds
-~~~~~~~~~~~~~~~~~~~~~
+player_set_fail_seconds
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Set the duration a player needs to be bankrupt in order to lose the level.
 
 .. code-block:: js
 
-	game_set_fail_seconds(playerId, amount)
+	player_set_fail_seconds(playerId, amount)
 
 +------------------------+------------+--------------------+
 | Param                  | Type       | Description        |
@@ -50,58 +63,97 @@ Set the duration a player needs to be bankrupt in order to lose the level.
 | amount                 | Number     | Time in seconds.   |
 +------------------------+------------+--------------------+
 
-game_set_fail_seconds(amount)
-game_set_population_cap(amount)
-game_set_intern_cap(amount)
+player_set_population_cap
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-game_spawn_contract()
-game_spawn_resume()
+player_set_population_cap(interns, employees)
 
+player_set_rep
+~~~~~~~~~~~~~~
 
-Player
-------
+Set a players reputation with a company.
 
 player_set_rep(playerId, companyId, amount)
-Set a players reputation with a company.
+
+player_move_camera
+~~~~~~~~~~~~~~~~~~
 
 player_move_camera(playerId, targetPosX, targetPosY, targetPosZ, zoom, speed)
 
 Items
 -----
 
-Item_spawn(playerId, assetName, posX, posY, rot)
+item_spawn
+~~~~~~~~~~
+
 Spawn an item.
 Returns entity ID of spawned item.
 
-item_set_available(playerId, assetName, isAvailable)
+Item_spawn(playerId, assetName, posX, posY, rot)
+
+item_set_available
+~~~~~~~~~~~~~~~~~~
+
 Makes an item available/unavailable for a player to place.
 
-item_spawn_notify(playerId, assetName)
+item_set_available(playerId, assetName, isAvailable)
+
+item_spawn_notify
+~~~~~~~~~~~~~~~~~
+
 Spawn a notification for the player that an item is available.
 
+item_spawn_notify(playerId, assetName)
+
+item_spawn_blueprint
+~~~~~~~~~~~~~~~~~~~~
+
+Spawn a blueprint.
+
 item_spawn_blueprint(playerId, assetName, posX, posY, rot)
-Spawn a blueprint 
+
+item_set_locked
+~~~~~~~~~~~~~~~
+
+Set the locked state of a door.
 
 item_set_locked(doorId, isLocked)
-Set the locked state of a door.
+
 doorId (number): entity ID of the door.
 isLocked (boolean): true = locked, false = unlocked.
-
 
 Units
 -----
 
-unit_spawn(playerId, posX, posY, rot, tier, level)
+unit_spawn
+~~~~~~~~~~
+
 Spawns a unit.
+
+unit_spawn(playerId, posX, posY, rot, tier, level)
+
 Returns entity ID of spawned unit.
 
-unit_set_speech(unitId, text)
-unit_set_stamina(unitId, amount)
-unit_get_alive(unitId)
+unit_set_speech
+~~~~~~~~~~~~~~~
 
+unit_set_speech(unitId, text)
+
+unit_set_stamina
+~~~~~~~~~~~~~~~~
+
+unit_set_stamina(unitId, amount)
+
+unit_get_alive
+~~~~~~~~~~~~~~
+
+unit_get_alive(unitId)
 
 AI
 --
+
+ai_set_active
+~~~~~~~~~~~~~
 
 ai_set_active(playerId, isActive)
 
@@ -111,13 +163,27 @@ Cinematics
 Audio
 -----
 
+audio_play_music
+~~~~~~~~~~~~~~~~
+
 audio_play_music(playerId, musicId)
+
+audio_play_sound
+~~~~~~~~~~~~~~~~
+
 audio_play_sound(playerId, soundId)
 
 Localization
 ------------
 
+locale_get_locale
+~~~~~~~~~~~~~~~~~
+
 locale_get_locale()
+
+locale_get_string
+~~~~~~~~~~~~~~~~~
+
 locale_get_string(stringId)
 
 Waits
@@ -132,6 +198,9 @@ A wait function will pause script execution until a certain condition has been m
 	    wait_tick(50);
     }
 
+wait_time
+~~~~~~~~~
+
 wait_time(ticks)
 
 Triggers
@@ -139,7 +208,17 @@ Triggers
 
 A trigger function will schedule a function to execute when a certain condition has been met. All trigger functions return a 'Trigger ID' that can be used to cancel the trigger.
 
+trigger_cancel
+~~~~~~~~~~~~~~
 
 trigger_cancel(triggerId)
+
+trigger_tick
+~~~~~~~~~~~~
+
 trigger_tick(tick, callback)
+
+trigger_unit_dead
+~~~~~~~~~~~~~~~~~
+
 trigger_unit_dead(unitId, callback)
